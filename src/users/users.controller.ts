@@ -9,13 +9,19 @@ import { UpdateUserDto } from './dto';
 export class UsersController {
     constructor(private readonly userService: UsersService) {}
 
+
     @Get()
+    getAllUsers() {
+        return this.userService.getAllUsers();
+    }
+
+   /*  @Get()
     getAllUsers(@Query() filterQuery): User[] {
         const { searchTerm, orderBy } = filterQuery;
 
         return this.userService.getAllUsers();
     }
-
+ */
     @Get(':id')
     getUser(@Param('id') id: string): User {
         return this.userService.getUser(id);

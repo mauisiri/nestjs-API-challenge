@@ -6,7 +6,7 @@ export class UsersService {
     private users: User[] = [
         {
             id: '1',
-            name: 'Charles_500',
+            name: 'Iris-Hostelworld',
             languagePreference: 'English',
             showLanguagesPreference: true,
             showProfilePreference: true,
