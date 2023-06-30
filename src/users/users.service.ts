@@ -5,7 +5,7 @@ import { User } from './user.entity';
 export class UsersService {
     private users: User[] = [
         {
-            id: '1',
+            id: 1,
             name: 'Iris-Hostelworld',
             languagePreference: 'English',
             showLanguagesPreference: true,
@@ -18,7 +18,7 @@ export class UsersService {
         return this.users;
     }
 
-    getUser(id: string): User {
+    getUser(id: number): User {
         const user = this.users.find((item) => item.id ===id);
 
         if(!user){
@@ -36,7 +36,7 @@ export class UsersService {
         termsAccepted: boolean,) {
 
         this.users.push({
-            id: (Math.floor(Math.random() * 2000) + 1).toString(),
+            id: (Math.floor(Math.random() * 2000) + 1),
             name,
             languagePreference,
             showLanguagesPreference,
@@ -46,7 +46,7 @@ export class UsersService {
     }
 
     updateUser(
-        id: string, 
+        id: number, 
         languagePreference: string, 
         showLanguagesPreference: boolean,
         showProfilePreference: boolean,
@@ -60,7 +60,7 @@ export class UsersService {
 
     }
 
-    removeUser(id: string) { 
+    removeUser(id: number) { 
         const index = this.users.findIndex((user) => user.id === id);
         if (index >=0) {
             this.users.splice(index, 1)

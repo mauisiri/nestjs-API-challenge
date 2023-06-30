@@ -19,7 +19,7 @@ ports:
 
 pgadmin:
   image: dpage/pgadmin4
-  container_name: pgadmin
+  container_name: pgAdmin
   restart: always
   enviornment:
   PGADMIN_EMAIL: admin@nestjs.com

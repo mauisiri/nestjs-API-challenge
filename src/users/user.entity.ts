@@ -1,5 +1,11 @@
+import { Entity, PrimaryGeneratedColumn } from "typeorm";
+
+
+@Entity()
 export class User {
-    id: string;
+    @PrimaryGeneratedColumn('increment')
+    id: number;
+    
     name: string;
     languagePreference: string;
     showLanguagesPreference: boolean;
