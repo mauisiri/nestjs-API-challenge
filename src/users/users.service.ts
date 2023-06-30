@@ -5,7 +5,7 @@ import { User } from './user.entity';
 export class UsersService {
     private users: User[] = [
         {
-            id: 1,
+            id: '1',
             name: 'Iris-Hostelworld',
             languagePreference: 'English',
             showLanguagesPreference: true,
@@ -18,8 +18,8 @@ export class UsersService {
         return this.users;
     }
 
-    getUser(id: number): User {
-        const user = this.users.find((item) => item.id ===id);
+    getUser(id: string): User {
+        const user = this.users.find((item) => item.id === id);
 
         if(!user){
             throw new NotFoundException("User not found")
@@ -36,7 +36,7 @@ export class UsersService {
         termsAccepted: boolean,) {
 
         this.users.push({
-            id: (Math.floor(Math.random() * 2000) + 1),
+            id: (Math.floor(Math.random() * 2000) + 1).toString(),
             name,
             languagePreference,
             showLanguagesPreference,
@@ -46,7 +46,7 @@ export class UsersService {
     }
 
     updateUser(
-        id: number, 
+        id: string, 
         languagePreference: string, 
         showLanguagesPreference: boolean,
         showProfilePreference: boolean,
@@ -60,7 +60,7 @@ export class UsersService {
 
     }
 
-    removeUser(id: number) { 
+    removeUser(id: string) { 
         const index = this.users.findIndex((user) => user.id === id);
         if (index >=0) {
             this.users.splice(index, 1)
